@@ -1,12 +1,17 @@
 import os
 
 class Config:
-    pass
+    SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL')
+    if SQLALCHEMY_DATABASE_URI and SQLALCHEMY_DATABASE_URI.startswith('postgres://'):
+        SQLALCHEMY_DATABASE_URI=SQLALCHEMY_DATABASE_URI.replace('postgres://', 'postgresql://')
 
 class ProdConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL')
+    if SQLALCHEMY_DATABASE_URI and SQLALCHEMY_DATABASE_URI.startswith('postgres://'):
+        SQLALCHEMY_DATABASE_URI=SQLALCHEMY_DATABASE_URI.replace('postgres://', 'postgresql://')
 
 class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL')
     DEBUG = True
     
 
