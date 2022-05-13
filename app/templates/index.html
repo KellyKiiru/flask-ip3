@@ -1,11 +1,16 @@
-<!--
 {% extends 'base.html' %}
 
 {% block styles %}
-  {{super()}}
-  <link rel="stylesheet" href="{{url_for('static', filename='styles/index.css')}}">
-{% endblock %}-->
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
 
-<!--{% block content %}-->
-<h3>bhjndsm cxjik</h3>
-<!--{% endblock %}-->
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      {{title}}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -14,12 +14,12 @@ def create_app(config_name):
     
     #app configurations
     app.config.from_object(config_options[config_name])
-    app.config['SQLALCHEMY_DATABASE_URI'] = ProdConfig.SQLALCHEMY_DATABASE_URI
+    #app.config['SQLALCHEMY_DATABASE_URI'] = ProdConfig.SQLALCHEMY_DATABASE_URI
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     # register auth blueprint
     from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint)
+    app.register_blueprint(auth_blueprint, url_prefix = '/authenticate')
     
     # register main blueprint
     from .main import main as main_blueprint
