@@ -13,8 +13,10 @@ class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:Access@localhost/pitchapp'
         
     DEBUG = True
-    
+
 config_options = {
     'development': DevConfig,
     'production': ProdConfig,
+    'SECRET_KEY':"powerful secretkey",
+    'WTF_CSRF_SECRET_KEY':"a csrf secret key"
 }
