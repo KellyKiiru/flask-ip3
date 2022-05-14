@@ -1,1 +1,32 @@
 {% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/signup.css')}}">
+ {% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <h2 class="text-center"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign UP</h2><hr>
+      {{wtf.quick_form(registration_form)}} 
+        <a href="/">Go Back Home</a></p>
+    </div>
+    <div class="col-md-6">
+      
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script src="{{url_for('static', filename='resources/signup.js')}}"></script>
+<script src="https://kit.fontawesome.com/85217334a5.js" crossorigin="anonymous"></script>
+{% endblock %}

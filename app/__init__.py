@@ -18,8 +18,8 @@ def create_app(config_name):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     # register auth blueprint
-    from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix = '/authenticate')
+    #from .auth import auth as auth_blueprint
+    #app.register_blueprint(auth_blueprint, url_prefix = '/authenticate')
     
     # register main blueprint
     from .main import main as main_blueprint
