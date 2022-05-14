@@ -1,3 +1,20 @@
 a{
     color: white;
 }
+/*h4:hover{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: large;
+    width: fit-content;
+}*/
+#pitchlinks{
+    font-size: larger;
+    font-weight:700;
+    text-decoration: underline;
+}
+/*h4{
+    background-color: brown;
+}*/

@@ -19,10 +19,12 @@
         0 32px 16px rgba(0, 0, 0, 0.09);"></iframe>
     </div>
     <div class="row">
-      <div id="pageintro" class="col-md-6" style="text-align: center;">
-        <h2 id="h3">{{title}}</h2>
-        <p id="intotext">One Minute! <br> Is all it takes to make an impression. What do you want that impression to be?
-          Can you make your one minute profitable?</p>
+      <div id="pageintro" class="col-md-12" style="text-align: center;display: flex; justify-content: center;">
+        <div style="width:max-content; background-color: rgba(0, 94, 55, 0.555); border-radius: 10px;padding: 10px;" >
+          <h2 id="h3"><strong><u>{{title}}</u></strong></h2>
+          <p id="intotext">One Minute! <br> Is all it takes to make an impression. What do you want that impression to be?<br>
+            Can you make your one minute profitable?</p>
+        </div>
       </div>
     </div>
 
@@ -30,8 +32,14 @@
       <div class="row">
         <div class="col">
           <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
-            <li class="nav-item">
+            <li id="pitchlinks" class="nav-item">
               <a id="cats" class="nav-link" data-toggle="tab" href="#all"><strong>Pitches</strong> </a>
+            </li>
+            <li id="pitchlinks" class="nav-item">
+              <a class="nav-link" id ="cats" data-toggle="tab" href="#technology">Technology</a>
+            </li>
+            <li id="pitchlinks" class="nav-item">
+              <a class="nav-link" id ="cats"data-toggle="tab" href="#innovation">Innovation</a>
             </li>
           </ul>
         </div>

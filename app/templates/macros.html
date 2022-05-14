@@ -1,5 +1,10 @@
 {% macro displayPitches(pitches) %}
 
+{% block styles %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+{% endblock %}
+
 {% if pitches %}
 {% for pitch in pitches %}
 
