@@ -24,7 +24,7 @@ class User(UserMixin, db.Model):
 
     @property
     def password(self):
-        raise AttributeError('You cannot read the passwords')
+        raise AttributeError('You cannot read password')
 
     @password.setter
     def password(self, password):
@@ -53,7 +53,7 @@ class Pitch(db.Model):
         db.session.add(self)
         db.session.commit()
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f'User {self.pitch} {self.category}'
 
 

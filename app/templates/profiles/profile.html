@@ -21,12 +21,6 @@
                     class="btn btn-outline-info">Update Profile</button></a>
             {% endif %}
         </div>
-        <div class="col-md-4 prof-pic">
-            {% if user.profile_pic %}
-            <img src="{{url_for('static', filename=user.profile_pic)}}" alt="" class="img-thumbnail">
-            {% endif %}
-        </div>
-        <div class="col-md-2"></div>
     </div>
 </div>
 {% endblock %}
