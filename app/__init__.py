@@ -4,10 +4,12 @@ from config import config_options
 from flask_sqlalchemy import SQLAlchemy
 from config import ProdConfig
 from flask_login import LoginManager
+from flask_simplemde import SimpleMDE
 
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
+simple = SimpleMDE()
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -17,6 +19,7 @@ login_manager.login_view = 'main.login'
 def create_app(config_name):
     # initialize app
     app = Flask(__name__)
+    
     
     #app configurations
     app.config.from_object(config_options[config_name])
@@ -36,6 +39,8 @@ def create_app(config_name):
     
     #initialize login manager
     login_manager.init_app(app)
+    
+    simple.init_app(app)
     
     
     return app
