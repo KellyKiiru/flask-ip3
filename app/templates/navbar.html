@@ -14,6 +14,13 @@
                 <div class="left"></div>
                 <div class="right"></div>
             </div>
+            {% if current_user.is_authenticated %}
+              <li><a href="{{url_for('main.profile', uname = current_user.username)}}" title="{{current_user.username}}'s Profile">Hello {{current_user.username}}!</a></li>
+              <li><a href="{{url_for('main.new_pitch')}}">New Pitch</a></li>
+              {% else %}
+              <li><a href="{{url_for('main.signup')}}">Register</a></li>
+              <li><a href="{{url_for('main.login')}}">Login</a></li>
+              {% endif %}
         </ul>
     </div>
 </nav>

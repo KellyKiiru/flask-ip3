@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 
 {% block styles %}
 {{super()}}
@@ -9,7 +10,8 @@
 <div class="backgif">
   <div class="container">
     <div class="row">
-      <iframe width="100%" height="345" src="https://www.youtube.com/embed/ZU0f8_C5Pm0?playlist=ZU0f8_C5Pm0&loop=1&autoplay=1&mute=1" style="border-radius: 10px;
+      <iframe width="100%" height="345"
+        src="https://www.youtube.com/embed/ZU0f8_C5Pm0?playlist=ZU0f8_C5Pm0&loop=1&autoplay=1&mute=1" style="border-radius: 10px;
       box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09),
         0 4px 2px rgba(0, 0, 0, 0.09),
         0 8px 4px rgba(0, 0, 0, 0.09),
@@ -18,15 +20,34 @@
     </div>
     <div class="row">
       <div id="pageintro" class="col-md-6" style="text-align: center;">
-        <h2 id="h3" >{{title}}</h2>
-        <p id="intotext" >One Minute! <br> Is all it takes to make an impression. What do you want that impression to be? Can you make your one minute profitable?</p>
+        <h2 id="h3">{{title}}</h2>
+        <p id="intotext">One Minute! <br> Is all it takes to make an impression. What do you want that impression to be?
+          Can you make your one minute profitable?</p>
       </div>
     </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
+            <li class="nav-item">
+              <a id="cats" class="nav-link" data-toggle="tab" href="#all"><strong>Pitches</strong> </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="tab-content">
+        <div  class="container tab-pane active" id="all"><br>
+          {{macro.displayPitches(pitches)}}
+          {{macro.displayComment(comments)}}
+        </div>
+    </div>
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}
 
-{% block scripts %}
-<script src="{{url_for('static', filename='resources/index.js')}}"></script>
-{% endblock %}
+  {% block scripts %}
+  <script src="{{url_for('static', filename='resources/index.js')}}"></script>
+  {% endblock %}

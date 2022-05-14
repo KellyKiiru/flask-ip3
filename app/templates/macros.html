@@ -1,0 +1,60 @@
+{% macro displayPitches(pitches) %}
+
+{% if pitches %}
+{% for pitch in pitches %}
+
+<div class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 style="text-decoration: underline; font-weight: bold;padding-left: 2%; color: #ffffff;text-align: center;">{{pitch.title}}</h3>
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>{{pitch.pitch}}</p>
+          <footer style="background-color: white;padding:10px;border-radius: 10px;width: max-content;" class="footer">By <span title="Source Title">{{pitch.user.username}}</span></footer>
+          <div style="margin-top: 1%;">
+            <a href="{{url_for('main.upvote', id=pitch.id)}}" title="Upvote" style="padding-right: 3%;"><i class="fa-regular fa-thumbs-up"></i> {{pitch.upvotes.count()}}</a>  
+            <a href="{{url_for('main.downvote', id=pitch.id)}}" title="Downvote" style="padding: 0 3%;"><i class="fa-regular fa-thumbs-down"></i> {{pitch.downvotes.count()}}</a>  
+            <a href="{{url_for('main.new_comment', pitch_id=pitch.id)}}" title="Leave a comment" id="comment" style="padding-left: 3%; cursor: pointer;"><i class="fa-regular fa-comments"></i> {{pitch.comments.count()}}</a>
+          </div>
+        </blockquote>
+      </div>
+  </div>
+</div>
+
+{% endfor %}
+
+{% if pitches %}
+<h4 style="text-align:center ;"><a href="{{url_for('main.new_pitch')}}">Add pitch?</a></h4>
+{% endif %}
+
+{% else %}
+
+<div class="col-12">
+  <h3 style="text-align:center ;color: #ff0000;">No pitches added in this category yet. Be the first!</h3>
+  <h4 style="text-align:center ;"><a href="{{url_for('main.new_pitch')}}">Add pitch?</a></h4>  
+
+</div>
+
+
+{% endif %}
+
+{% endmacro %}
+
+
+{% macro displayComment(comments) %}
+  
+
+  {% for comment in comments %}
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>{{comment.comment}}</p>
+          <footer style="background-color: white;padding:10px;border: radius 10px;" class="footer">By <span title="Source Title">{{comment.user.username}}</span></footer>
+        </blockquote>
+      </div>
+    </div><hr>
+    {% endfor %}
+
+
+{% endmacro %}

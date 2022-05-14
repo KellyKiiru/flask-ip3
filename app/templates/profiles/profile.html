@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <h2 class="prof">My Profile</h2>
+            <hr>
+            <h3 class="prof-head">Username</h3>
+            <p>{{user.username | capitalize}}</p>
+            <h3 class="prof-head">About</h3>
+            {% if user.bio %}
+            <p>{{user.bio}}</p>
+            {% else %}
+            <p>{{user.username | capitalize}} has no bio</p>
+            {% endif %}
+            {% if user == current_user %}
+            <a href="{{url_for('main.updateprofile', uname = user.username)}}"><button
+                    class="btn btn-outline-info">Update Profile</button></a>
+            {% endif %}
+        </div>
+        <div class="col-md-4 prof-pic">
+            {% if user.profile_pic %}
+            <img src="{{url_for('static', filename=user.profile_pic)}}" alt="" class="img-thumbnail">
+            {% endif %}
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+{% endblock %}
