@@ -12,4 +12,13 @@ class TestPitch(unittest.TestCase):
         User.query.delete()
         Comment.query.delete()
 
-    
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_pitch, Pitch))
+
+    def test_init(self):
+        self.assertEqual(self.new_pitch.title, "AI")
+
+    def test_save_pitch(self):
+        self.new_pitch.save_pitch()
+        pitches = Pitch.query.all()
+        self.assertTrue(len(pitches) > 0)
