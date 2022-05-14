@@ -98,3 +98,19 @@ def new_pitch():
 
   return render_template('pitchform.html', form = form)
 
+
+@main.route('/new/comment/<int:pitch_id>', methods=['POST', 'GET'])
+@login_required
+def new_comment(pitch_id):
+  comments = Comment.query.filter_by(pitch_id=pitch_id).all()
+  form = CommentForm()
+  if form.validate_on_submit():
+    comment = form.comment.data
+
+    new_comment_obj = Comment(comment=comment, pitch_id=pitch_id, user_id = current_user._get_current_object().id)
+
+    new_comment_obj.save_comment()
+    return redirect(url_for('main.new_comment', pitch_id=pitch_id))
+
+  return render_template('commentform.html', form=form, comments=comments)
+
