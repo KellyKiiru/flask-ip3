@@ -17,8 +17,9 @@
             {% if current_user.is_authenticated %}
               <li><a href="{{url_for('main.profile', uname = current_user.username)}}" title="{{current_user.username}}'s Profile">Hello {{current_user.username}}!</a></li>
               <li><a href="{{url_for('main.new_pitch')}}">New Pitch</a></li>
+              <li><a href="{{url_for('main.logout')}}">Logout</a></li>
               {% else %}
-              <li><a href="{{url_for('main.signup')}}">Register</a></li>
+              <li><a href="{{url_for('main.signup')}}">Signup</a></li>
               <li><a href="{{url_for('main.login')}}">Login</a></li>
               {% endif %}
         </ul>
