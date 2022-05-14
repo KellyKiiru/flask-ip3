@@ -14,9 +14,9 @@ from flask_login import login_user, login_required, logout_user
 @main.route('/')
 def index():
   title = 'Welcome to Pitch App'
-  pitches = Pitch.query.all()
+  #pitches = Pitch.query.all()
   
-  return render_template('index.html', title = title, pitches = pitches)
+  return render_template('index.html', title = title)
 
 @main.route('/login', methods=['GET', 'POST'])
 def login():
