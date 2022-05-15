@@ -23,7 +23,7 @@ def create_app(config_name):
     
     #app configurations
     app.config.from_object(config_options[config_name])
-    #app.config['SQLALCHEMY_DATABASE_URI'] = ProdConfig.SQLALCHEMY_DATABASE_URI
+    app.config['SQLALCHEMY_DATABASE_URI'] = ProdConfig.SQLALCHEMY_DATABASE_URI
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     # register main blueprint
