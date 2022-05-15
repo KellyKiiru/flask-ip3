@@ -1,5 +1,7 @@
 # Pitch App
 
+![project's landing page](./app/static/resources/Screenshot%20from%202022-05-15%2011-48-21.png)
+
 ## By Kelly Kiiru
 
 This is a Flask application that allows users to submit their one minute pitches and other users to vote on them and leave comments of their feedback on them. The pitches are organized by category. 
