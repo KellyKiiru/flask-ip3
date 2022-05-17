@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from config import config_options
 from flask_sqlalchemy import SQLAlchemy
 from config import ProdConfig
 from flask_login import LoginManager
@@ -23,7 +22,10 @@ def create_app(config_name):
     
     
     #app configurations
+    
+    from config import config_options
     app.config.from_object(config_options[config_name])
+    
     app.config['SQLALCHEMY_DATABASE_URI'] = ProdConfig.SQLALCHEMY_DATABASE_URI
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
