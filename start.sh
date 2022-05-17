@@ -1,4 +1,3 @@
-
 export SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:Access@localhost/pitchapp'
 
 export MAIL_USERNAME='kelly.kiiru@student.moringaschool.com'
