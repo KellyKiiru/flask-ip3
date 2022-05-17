@@ -91,7 +91,7 @@ class Upvote(db.Model):
 
 
 class Downvote(db.Model):
-    __tablename__ = 'downvotes'
+    __tablename__ ='downvotes'
 
     id = db.Column(db.Integer, primary_key=True)
     pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
