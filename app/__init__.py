@@ -20,7 +20,6 @@ def create_app(config_name):
     # initialize app
     app = Flask(__name__)
     
-    
     #app configurations
     
     from config import config_options

@@ -4,7 +4,7 @@ from flask_script import Manager, Server
 from app.models import User, Pitch, Comment
 from flask_migrate import Migrate, MigrateCommand
 
-app = create_app('production')
+app = create_app('development')
 
 manager = Manager(app)
 manager.add_command('server',Server)
@@ -17,7 +17,5 @@ migrate = Migrate(app, db)
 manager.add_command('db', MigrateCommand)
 
 if __name__ == '__main__':
-    #from waitress import serve
-    #serve(app, host="0.0.0.0", port=5000)
     app.config['SECRET_KEY'] = 'mySecret'
     manager.run()
