@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from config import ProdConfig
 from flask_login import LoginManager
 from flask_simplemde import SimpleMDE
-from waitress import serve
 
 
 db = SQLAlchemy()

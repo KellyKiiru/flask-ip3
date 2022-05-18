@@ -2,9 +2,7 @@ from distutils.debug import DEBUG
 from doctest import FAIL_FAST
 import os
 from pickle import FALSE
-from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv())
 class Config:
     SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
         
